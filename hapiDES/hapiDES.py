@@ -50,9 +50,8 @@ class hapiDES():
         DES_overlay = Overlay(self.bitfile)
         DES_overlay.download()
         DES_overlay.ip_dict
+
     def reset_des_accel(self):
         config_reg=0x80000001
-        #mmio.write(0,config_reg)
         print("DES ACCELERATOR RESET")
         config_reg=0x80000001
-        #mmio.write(0,config_reg)
