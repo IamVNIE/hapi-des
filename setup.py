@@ -8,7 +8,7 @@ import hapiv1
 
 setup(
     name = "hapiDES",
-    version = hapides.__version__,
+    version = hapiDES.__version__,
     url = 'https://github.com/IamVNIE/hapi-dev',
     license = 'All rights reserved.',
     author = "Vinayaka Jyothi.",
