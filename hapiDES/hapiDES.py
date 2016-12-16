@@ -13,20 +13,19 @@ class hapiDES():
     bitfile : str
     Absolute path to bitstream
     
-	data : List of size2 (int or hex values) 
+    data : List of size2 (int or hex values) 
        Input Data for Encryption or Decryption: data[0] is MSB 32 bits and data [1] is LSB 32 bits
     result_ENC_DEC : List of size2 (hex value) 
        Return results of Encryption or Decryption: result_ENC_DEC[0] is MSB 32 bits and result_ENC_DEC[1] is LSB 32 bits
        
    """
-	
 
     def __init__(self):
         self.bitfile = general_const.BITFILE
-		#self.overlay = Overlay(self.bitfile)
+        self.overlay = Overlay(self.bitfile)
         if not Overlay.is_loaded(self.overlay):
-			self.overlay.download()
-		mmio = MMIO(0x43C40000,0x00010000)
+            self.overlay.download()
+        mmio = MMIO(0x43C40000,0x00010000)
 
     #global mmio = MMIO(0x43C40000,0x00010000)
     global result_ENC_DEC
