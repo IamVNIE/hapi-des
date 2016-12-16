@@ -23,7 +23,7 @@ from pynq import MMIO
 from pynq import Overlay
 from hapiDES import general_const
 DES_overlay = None
-
+mmio = MMIO(0x43C40000,0x00010000)
 class hapiDES():
     """Class to control the custom IP hardware (HAPI)
 
@@ -49,9 +49,12 @@ class hapiDES():
         global DES_overlay
         DES_overlay = Overlay(self.bitfile)
         DES_overlay.download()
-        DES_overlay.ip_dict
+        #DES_overlay.ip_dict
 
     def reset_des_accel(self):
+        global mmio
         config_reg=0x80000001
+        self.mmio.write(0,config_reg)
         print("DES ACCELERATOR RESET")
         config_reg=0x80000001
+        self.mmio.write(0,config_reg)
