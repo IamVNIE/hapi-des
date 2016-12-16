@@ -2,7 +2,6 @@ from pynq import PL
 from pynq import MMIO
 from pynq import Overlay
 from hapiDES import general_const
-from . import mimo
 class hapiDES():
     """Class to control the custom IP hardware (HAPI)
 
