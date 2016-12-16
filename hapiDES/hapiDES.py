@@ -1,4 +1,6 @@
-from pynq import Overlay,PL,MMIO
+from pynq import PL
+from pynq import MMIO
+from pynq import Overlay
 from hapiDES import general_const
 
 hapiDES_overlay = None
