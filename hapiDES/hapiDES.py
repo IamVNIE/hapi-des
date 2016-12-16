@@ -24,6 +24,7 @@ from pynq import Overlay
 from hapiDES import general_const
 DES_overlay = None
 mmio = MMIO(0x43C40000,0x00010000)
+result_ENC_DEC=[0,0]
 class hapiDES():
     """Class to control the custom IP hardware (HAPI)
 
@@ -50,7 +51,9 @@ class hapiDES():
         DES_overlay = Overlay(self.bitfile)
         DES_overlay.download()
         #DES_overlay.ip_dict
+#    global result_ENC_DEC
 
+    
     def des_status(self):
         global mmio
         config_reg=mmio.read(0)
@@ -86,6 +89,7 @@ class hapiDES():
 
     def result(self):     
         global mmio
+        global result_ENC_DEC
         result_ENC_DEC[0]= hex(mmio.read(20))
         result_ENC_DEC[1]= hex(mmio.read(24))
         return result_ENC_DEC
@@ -98,6 +102,7 @@ class hapiDES():
  
     def encrypt(self,data):  
         global mmio
+        global result_ENC_DEC
         mmio.write(4,data[0])
         mmio.write(8,data[1])
         self.result()
@@ -105,7 +110,16 @@ class hapiDES():
     
     def decrypt(self,data):
         global mmio
+        global result_ENC_DEC
         mmio.write(4,data[0])
         mmio.write(8,data[1])
         self.result()
         return result_ENC_DEC
+    
+    def reset_des_accel(self):
+        global mmio
+        config_reg=0x80000001
+        self.mmio.write(0,config_reg)
+        print("DES ACCELERATOR RESET")
+        config_reg=0x80000001
+        self.mmio.write(0,config_reg)
