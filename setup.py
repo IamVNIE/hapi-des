@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import subprocess
 import sys
 import shutil
-import hapiv1
+import hapiDES
 
 
 
@@ -16,7 +16,7 @@ setup(
     packages = ['hapiDES'],
     package_data = {
  #   '' : ['*.bit','*.tcl','*.so'],
-    '' : ['*.bit','*.tcl','*.so','*.py'],
+    '' : ['*.bit','*.tcl','*.py'],
     },
     description = "PYNQ DES ACCELERATOR OVERLAY"
 )
