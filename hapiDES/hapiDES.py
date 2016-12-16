@@ -51,14 +51,6 @@ class hapiDES():
         DES_overlay.download()
         #DES_overlay.ip_dict
 
-    def reset_des_accel(self):
-        global mmio
-        config_reg=0x80000001
-        self.mmio.write(0,config_reg)
-        print("DES ACCELERATOR RESET")
-        config_reg=0x80000001
-        self.mmio.write(0,config_reg)
-
     def des_status(self):
         global mmio
         config_reg=mmio.read(0)
