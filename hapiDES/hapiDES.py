@@ -23,29 +23,12 @@ class hapiDES():
 
     def __init__(self):
         self.bitfile = general_const.BITFILE
-        if PL.bitfile_name != self.bitfile:
-                self.download_bitstream()
+		self.overlay = Overlay(self.bitfile)
+        if not Overlay.is_loaded(self.overlay):
+            self.overlay.download()
+		mmio = MMIO(0x43C40000,0x00010000)
 
-    def download_bitstream(self):
-        """Download the bitstream
-
-        Downloads the bitstream onto hardware using overlay class.
-        Also gives you access to overlay.
-
-        Parameters
-        ----------
-        None
-
-        Returns
-        -------
-        None
-
-        """
-        global hapiDES_overlay
-        hapiDES_overlay = Overlay(self.bitfile)
-        hapiDES_overlay.download()
-
-    mmio = MMIO(0x43C40000,0x00010000)
+    global mmio = MMIO(0x43C40000,0x00010000)
     global result_ENC_DEC
     result_ENC_DEC=[0,0]
 
