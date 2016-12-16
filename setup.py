@@ -7,7 +7,7 @@ import hapiv1
 
 
 setup(
-    name = "hapi-DES",
+    name = "hapiDES",
     version = hapides.__version__,
     url = 'https://github.com/IamVNIE/hapi-dev',
     license = 'All rights reserved.',
