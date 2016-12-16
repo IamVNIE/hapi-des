@@ -22,7 +22,7 @@ class hapiDES():
         self.bitfile = general_const.BITFILE
         self.overlay = Overlay(self.bitfile)
         mmio = MMIO(0x43C40000,0x00010000)
-        print mmio
+        print(mmio)
     #global mmio = MMIO(0x43C40000,0x00010000)
         global result_ENC_DEC
         result_ENC_DEC=[0,0]
