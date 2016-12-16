@@ -20,12 +20,12 @@ class hapiDES():
        
    """
 
+    mmio = MMIO(0x43C40000,0x00010000)
     def __init__(self):
         self.bitfile = general_const.BITFILE
         self.overlay = Overlay(self.bitfile)
         if not Overlay.is_loaded(self.overlay):
             self.overlay.download()
-        self.mmio = MMIO(0x43C40000,0x00010000)
 
     #global mmio = MMIO(0x43C40000,0x00010000)
     global result_ENC_DEC
@@ -33,10 +33,10 @@ class hapiDES():
 
     def reset_des_accel(self):
         config_reg=0x80000001
-        mmio.write(0,config_reg)
+        self.mmio.write(0,config_reg)
         print("DES ACCELERATOR RESET")
         config_reg=0x80000001
-        mmio.write(0,config_reg)
+        self.mmio.write(0,config_reg)
 
     def des_status(self):
         config_reg=mmio.read(0)
