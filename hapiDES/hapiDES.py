@@ -23,9 +23,9 @@ class hapiDES():
 
     def __init__(self):
         self.bitfile = general_const.BITFILE
-		self.overlay = Overlay(self.bitfile)
+		#self.overlay = Overlay(self.bitfile)
         if not Overlay.is_loaded(self.overlay):
-            self.overlay.download()
+			self.overlay.download()
 		mmio = MMIO(0x43C40000,0x00010000)
 
     #global mmio = MMIO(0x43C40000,0x00010000)
