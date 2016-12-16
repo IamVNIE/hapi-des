@@ -1,4 +1,4 @@
-# hapi-des
+# HARDWARE API (HAPI) - DES: PYNQ Z1 Custom Hardware Overlay
 
 Package Installation
 
