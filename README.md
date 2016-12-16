@@ -14,6 +14,7 @@ Custom PYNQ Hardware Overlay Creation Testing
 hapiDES() - Programs the bit file to FPGA
  - Usage: 
 	from hapiDES import hapiDES
+	
 	des=hapiDES()
 
 Available functions:
