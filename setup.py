@@ -9,7 +9,7 @@ import hapiv1
 setup(
     name = "hapiDES",
     version = hapiDES.__version__,
-    url = 'https://github.com/IamVNIE/hapi-dev',
+    url = 'https://github.com/IamVNIE/hapi-des',
     license = 'All rights reserved.',
     author = "Vinayaka Jyothi.",
     author_email = "vj338@nyu.edu",
