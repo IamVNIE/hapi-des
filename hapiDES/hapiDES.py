@@ -33,7 +33,7 @@ class hapiDES():
 
     def reset_des_accel(self):
         config_reg=0x80000001
-        self.mmio.write(0,config_reg)
+        mmio.write(0,config_reg)
         print("DES ACCELERATOR RESET")
         config_reg=0x80000001
-        self.mmio.write(0,config_reg)
+        mmio.write(0,config_reg)
