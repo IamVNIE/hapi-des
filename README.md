@@ -41,3 +41,5 @@ Available functions:
  - decrypt(data) - Perform decryption (Data needs to be sent as a list of 2 elements - MSB 32 bits first and LSB 32 bits)
 
  - result - shows result of operation. encrypt and decrypt function return the result of the operation.
+ 
+# Coming soon.. MultiCore DES Accelerator with 5 Cores  
