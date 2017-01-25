@@ -9,7 +9,7 @@ HAPI will provide seamless interface to the underlying hardware libraries to be 
 Package Installation
 
 from terminal via: sudo -H pip install --upgrade 'git+https://github.com/IamVNIE/hapi-des'
-by running the example notebook provided in the 'notebooks' folder.
+or by running the example notebook provided in the 'notebook' folder.
 
 This DES can be used as HARDWARE API (HAPI)
 
